@@ -1,0 +1,25 @@
+{
+    "name": "gh2fj",
+    "version": "1.0.0",
+    "description": "GitHub to Forgejo mirror",
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "npx tsc",
+        "start": "node dist/index.js"
+    },
+    "author": "Sylvie Rain",
+    "license": "MIT",
+    "packageManager": "pnpm@10.20.0",
+    "devDependencies": {
+        "@types/node": "^25.0.3",
+        "typescript": "^5.9.3"
+    },
+    "dependencies": {
+        "@octokit/rest": "^22.0.1",
+        "axios": "^1.13.2",
+        "chalk": "^5.6.2",
+        "dotenv": "^17.2.3",
+        "ora": "^9.0.0"
+    }
+}

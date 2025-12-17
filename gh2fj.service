@@ -1,0 +1,25 @@
+[Unit]
+Description=GitHub to Forgejo Mirror
+After=network.target
+
+[Service]
+Type=simple
+User=root
+# Change to your gh2fj directory
+WorkingDirectory=/home/sylvie/mirror
+# Change to your actual pnpm path (Is different if using nvm)
+ExecStart=/usr/bin/pnpm start
+Restart=always
+# 1h
+RestartSec=3600
+
+Environment="FORGEJO_URL=https://git.example.com"
+Environment="FORGEJO_TOKEN=forgejo_admin_token"
+Environment="FORGEJO_ORG_OWNER=forgejo_admin"
+Environment="DEFAULT_PASSWORD=your_default_password"
+Environment="GITHUB_TOKEN=your_github_token"
+Environment="GITHUB_USERS=github,users,to,mirror"
+Environment="GITHUB_ORGS=github,orgs,to,mirror"
+
+[Install]
+WantedBy=multi-user.target
